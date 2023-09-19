@@ -30,3 +30,23 @@ npm i tslint --save-dev
 # Configure the lint dependency
 npx tslint --init
 ```
+
+```bash
+# Install Jest framework (For testes) dependency
+npm i -D jest @types/jest ts-node --save-dev
+```
+
+```bash
+# Transpiler to improve performance
+npm i -D @swc/jest @swc/cli @swc/core
+```
+
+```bash
+# Initialize Jest
+npx jest --init
+```
+
+```bash
+# Run tests
+npm test
+```
