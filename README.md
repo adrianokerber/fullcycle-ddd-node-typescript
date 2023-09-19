@@ -3,6 +3,14 @@ A study of DDD applied on FullCycle course using Node.js with TypeScript.
 
 > Tip: This Node.js project was created using `npm i typescript --save-dev` command and `npx tsc --init` for a typescript configured project
 
+Our Domain was modeled as two main concepts:
+1. Customer Aggregate: The class group responsible for the customer data creation and management;
+2. Order Aggregate: The class group responsible for the order creation;
+
+Entity
+    -> Customer > Address
+    -> Order > OrderItem[]
+
 ## Setup
 Install Node.js via [NVM](https://github.com/nvm-sh/nvm).
 
