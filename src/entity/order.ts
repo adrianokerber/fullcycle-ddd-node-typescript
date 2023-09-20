@@ -12,6 +12,22 @@ export default class Order {
         this._customerId = customerId;
         this._items = items;
         this._total = this.total();
+
+        this.validate();
+    }
+
+    validate(): boolean {
+        if (this._id.length === 0) {
+            throw new Error("Id is required");
+        }
+        if (this._customerId.length === 0) {
+            throw new Error("CustomerId is required");
+        }
+        if (this._items.length === 0) {
+            throw new Error("Order must have at least one item");
+        }
+
+        return true;
     }
 
     total(): number {
