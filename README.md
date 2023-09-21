@@ -10,6 +10,7 @@ Our Domain was modeled as two main concepts:
 Entity
     -> Customer > Address
     -> Order > OrderItem[]
+    -> Product
 
 ## Setup
 Install Node.js via [NVM](https://github.com/nvm-sh/nvm).
@@ -42,11 +43,11 @@ npm i -D @swc/jest @swc/cli @swc/core
 ```
 
 ```bash
-# Initialize Jest
+# Initialize Jest for this project
 npx jest --init
 ```
 
 ```bash
-# Run tests
+# Run tests - NOTE: run this command after each domain change
 npm test
 ```
