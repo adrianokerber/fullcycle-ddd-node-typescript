@@ -28,8 +28,8 @@ In order to run the tests use:
 # Run tests - NOTE: run this command after each domain change
 npm test
 ```
+> Important: We had to change our scripts section on `package.json` to add the TypeScript check before the Jest execution to ensure that our code is always OK before running the test cases. Further explaining: Since Jest is being run on the JavaScript runtime, syntactic errors of TypeScript will be ignored unless we added that pre-check on the test script command definition.
 
-The following command is responsible for generating the JavaScript files. Run this to ensure that your TypeScript is right, the tests on Jest won't fail if you mess up with the TypeScript syntax.
 ```bash
 # Compile TypeScript to generate .js code
 npx tsc
