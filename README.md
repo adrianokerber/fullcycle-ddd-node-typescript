@@ -28,15 +28,16 @@ In order to run the tests use:
 npm test
 ```
 
-> Tip: On Windows system prefer installing Node on WSL2 as in [here](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
-
-## Commands used to setup the project
-Some useful commands for you to use.
-
+Command to generate the JS files
 ```bash
 # Compile TypeScript to generate .js code
 npx tsc
 ```
+
+> Tip: On Windows system prefer installing Node on WSL2 as in [here](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
+
+## Useful commands used on the project
+Some useful commands for you to use.
 
 ```bash
 # Install lint dependency
