@@ -1,16 +1,17 @@
 # A study about Domain Driven Design (DDD)
-A study of DDD applied on FullCycle course using Node.js with TypeScript.
+A study of DDD applied on FullCycle course using Node.js with TypeScript. And Used Jest as the test framework.
 
 > Tip: This Node.js project was created using `npm i typescript --save-dev` command and `npx tsc --init` for a typescript configured project
 
-Our Domain was modeled as two main concepts:
+Our Domain was modeled with these aggregates:
 1. Customer Aggregate: The class group responsible for the customer data creation and management;
 2. Order Aggregate: The class group responsible for the order creation;
+3. Product Aggregate: The product itself;
 
-Entity
-    -> Customer > Address
-    -> Order > OrderItem[]
-    -> Product
+As follows:
+    - Customer => Address
+    - Order => OrderItem[]
+    - Product
 
 > Tip: All files with the filename suffix ".spec.ts" are tests
 
@@ -28,7 +29,7 @@ In order to run the tests use:
 npm test
 ```
 
-Command to generate the JS files
+The following command is responsible for generating the JavaScript files. Run this to ensure that your TypeScript is right, the tests on Jest won't fail if you mess up with the TypeScript syntax.
 ```bash
 # Compile TypeScript to generate .js code
 npx tsc
