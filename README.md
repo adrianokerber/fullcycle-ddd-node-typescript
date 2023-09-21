@@ -12,12 +12,25 @@ Entity
     -> Order > OrderItem[]
     -> Product
 
+> Tip: All files with the filename suffix ".spec.ts" are tests
+
 ## Setup
 Install Node.js via [NVM](https://github.com/nvm-sh/nvm).
 
+Run the initial command to install the project dependencies:
+```bash
+npm install
+```
+
+In order to run the tests use:
+```bash
+# Run tests - NOTE: run this command after each domain change
+npm test
+```
+
 > Tip: On Windows system prefer installing Node on WSL2 as in [here](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
 
-## Useful commands
+## Commands used to setup the project
 Some useful commands for you to use.
 
 ```bash
@@ -45,9 +58,4 @@ npm i -D @swc/jest @swc/cli @swc/core
 ```bash
 # Initialize Jest for this project
 npx jest --init
-```
-
-```bash
-# Run tests - NOTE: run this command after each domain change
-npm test
 ```
