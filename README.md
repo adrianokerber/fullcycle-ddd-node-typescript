@@ -61,3 +61,8 @@ npm i -D @swc/jest @swc/cli @swc/core
 # Initialize Jest for this project
 npx jest --init
 ```
+
+```bash
+# Install UUID for Guids
+npm i uuid @types/uuid
+```
