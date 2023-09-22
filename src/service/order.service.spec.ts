@@ -36,4 +36,13 @@ describe("OrderService unit tests", () => {
 
     });
 
+    it("should throw an error when there are not items to place an order", () => {
+
+        expect(() => {
+            const customer = new Customer("c1", "Customer 1");
+            OrderService.placeOrder(customer, []);
+        }).toThrowError("Order must have at least one item");
+
+    });
+
 });

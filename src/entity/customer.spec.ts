@@ -19,7 +19,7 @@ describe("Customer unit tests", () => {
 
     });
 
-    it("should change name", () => {
+    it("should change the name", () => {
 
         // Arrange
         const customer = new Customer("123", "John");
@@ -29,6 +29,21 @@ describe("Customer unit tests", () => {
 
         // Assert
         expect(customer.name).toBe("Jane");
+
+    });
+
+    it("should change the address", () => {
+
+        const customer = new Customer("1", "Customer 1");
+        const address = new Address("Street 1", 123, "12341251", "São Paulo");
+        customer.address = address;
+
+        expect(customer.address).toBe(address);
+
+        const address2 = new Address("Street 2", 123, "12341251", "Montevideo");
+        customer.address = address2;
+
+        expect(customer.address).toBe(address2);
 
     });
 
@@ -66,6 +81,19 @@ describe("Customer unit tests", () => {
             const customer = new Customer("1", "Customer 1");
             customer.activate();
         }).toThrowError("Address is mandatory to activate a customer");
+
+    });
+
+    it("should add reward points", () => {
+
+        const customer = new Customer("1", "Customer 1");
+        expect(customer.rewardPoints).toBe(0);
+
+        customer.addRewardPoints(10);
+        expect(customer.rewardPoints).toBe(10);
+
+        customer.addRewardPoints(10);
+        expect(customer.rewardPoints).toBe(20);
 
     });
 
