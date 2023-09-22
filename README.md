@@ -27,6 +27,8 @@ In order to run the tests use:
 ```bash
 # Run tests - NOTE: run this command after each domain change
 npm test
+# In order to get coverage full report use the following command. Note: The coverage will be saved on the folder with the same name
+npm test --coverage
 ```
 > Important: We had to change our scripts section on `package.json` to add the TypeScript check before the Jest execution to ensure that our code is always OK before running the test cases. Further explaining: Since Jest is being run on the JavaScript runtime, syntactic errors of TypeScript will be ignored unless we added that pre-check on the test script command definition.
 
