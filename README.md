@@ -68,3 +68,13 @@ npx jest --init
 # Install UUID for Guids
 npm i uuid @types/uuid
 ```
+
+```bash
+# Install Sequelize - an ORM framework
+npm install sequelize reflect-metadata sequelize-typescript
+```
+
+```bash
+# Install the database SQLite 3 package
+ npm install sqlite3
+```
