@@ -15,7 +15,7 @@ export default class Customer {
         this.validate();
     }
 
-    validate() {
+    private validate() {
         if (this._id.length === 0) {
             throw new Error("Id is required");
         }

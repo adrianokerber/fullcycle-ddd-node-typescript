@@ -29,7 +29,7 @@ export default class OrderItemModel extends Model {
     declare quantity: number;
 
     @Column({ allowNull: false})
-    declare name: number;
+    declare name: string;
 
     @Column({ allowNull: false})
     declare price: number;
