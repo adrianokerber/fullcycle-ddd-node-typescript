@@ -14,7 +14,7 @@ export default class Address {
         this.validate();
     }
 
-    validate() {
+    private validate() {
         if (this._street.length === 0) {
             throw new Error("Street is required");
         }

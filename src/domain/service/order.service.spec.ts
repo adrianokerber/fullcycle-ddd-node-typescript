@@ -16,7 +16,7 @@ describe("OrderService unit tests", () => {
 
         // Assert
         expect(customer.rewardPoints).toBe(5);
-        expect(order.total()).toBe(10);
+        expect(order.total).toBe(10);
 
     });
 
