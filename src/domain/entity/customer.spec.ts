@@ -36,12 +36,12 @@ describe("Customer unit tests", () => {
 
         const customer = new Customer("1", "Customer 1");
         const address = new Address("Street 1", 123, "12341251", "São Paulo");
-        customer.address = address;
+        customer.changeAddress(address);
 
         expect(customer.address).toBe(address);
 
         const address2 = new Address("Street 2", 123, "12341251", "Montevideo");
-        customer.address = address2;
+        customer.changeAddress(address2);
 
         expect(customer.address).toBe(address2);
 
@@ -52,7 +52,7 @@ describe("Customer unit tests", () => {
         // Arrange
         const customer = new Customer("1", "Customer 1");
         const address = new Address("Street 1", 123, "12341251", "São Paulo");
-        customer.address = address;
+        customer.changeAddress(address);
 
         // Act
         customer.activate();
