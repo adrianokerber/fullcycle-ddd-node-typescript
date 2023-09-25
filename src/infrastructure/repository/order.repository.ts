@@ -49,7 +49,8 @@ export default class OrderRepository implements OrderRepositoryInterface {
             },
         );
         await OrderItemModel.destroy({
-            where: { order_id: entity.id }
+            where: { order_id: entity.id },
+            truncate: true
         });
         orderItemModels.forEach(async (orderItemModel) => {
             await OrderItemModel.create(orderItemModel);

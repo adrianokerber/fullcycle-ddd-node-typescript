@@ -133,8 +133,7 @@ describe("OrderRepository test", () => {
 
         // When
         order.customerId = customer2.id;
-        order.items.pop();
-        order.items.push(item2, item3);
+        order.items = [item2, item3];
         await orderRepository.update(order);
 
         // Then
@@ -147,8 +146,22 @@ describe("OrderRepository test", () => {
 
         expect(foundOrder?.customer_id).toBe("c2");
         expect(foundOrder?.items).toHaveLength(2);
-        expect(foundOrder?.items).toContain({ id: "i2"});
-        expect(foundOrder?.items).toContain({ id: "i3"});
+        expect(foundOrder?.items[0].toJSON()).toStrictEqual({
+            id: item2.id,
+            name: item2.name,
+            order_id: order.id,
+            price: item2.price,
+            product_id: item2.productId,
+            quantity: item2.quantity
+        });
+        expect(foundOrder?.items[1].toJSON()).toStrictEqual({
+            id: item3.id,
+            name: item3.name,
+            order_id: order.id,
+            price: item3.price,
+            product_id: item3.productId,
+            quantity: item3.quantity
+        });
 
     });
 

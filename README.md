@@ -1,5 +1,5 @@
 # A study about Domain Driven Design (DDD)
-A study of DDD applied on FullCycle course using Node.js with TypeScript. And Used Jest as the test framework.
+A study of DDD applied on FullCycle course using Node.js with TypeScript. Also using Jest as the test framework.
 
 > Tip: This Node.js project was created using `npm i typescript --save-dev` command and `npx tsc --init` for a typescript configured project
 
