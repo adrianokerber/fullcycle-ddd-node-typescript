@@ -78,3 +78,5 @@ npm install sequelize reflect-metadata sequelize-typescript
 # Install the database SQLite 3 package
  npm install sqlite3
 ```
+
+> Our project uses [gitmoji](https://gitmoji.dev/) guide on our commit messages pattern.
