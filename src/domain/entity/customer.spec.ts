@@ -1,8 +1,8 @@
 import EventDispatcher from "../event/@shared/event-dispatcher";
 import CustomerCreatedEvent from "../event/customer/customer-created.event";
-import EnviaConsoleLogHandler from "../event/customer/handler/envia-console-log.handler";
-import EnviaConsoleLog1Handler from "../event/customer/handler/envia-console-log1.handler";
-import EnviaConsoleLog2Handler from "../event/customer/handler/envia-console-log2.handler";
+import CustomerChangedAddressHandler from "../event/customer/handler/customer-changed-address.handler";
+import SendLogForCustomerCreated1Handler from "../event/customer/handler/send-log-for-customer-created-1.handler";
+import SendLogForCustomerCreated2Handler from "../event/customer/handler/send-log-for-customer-created-2.handler";
 import Address from "./address";
 import Customer from "./customer";
 
@@ -106,8 +106,8 @@ describe("Customer unit tests", () => {
 
         const eventDispatcher = new EventDispatcher();
         
-        const eventHandler1 = new EnviaConsoleLog1Handler();
-        const eventHandler2 = new EnviaConsoleLog2Handler();
+        const eventHandler1 = new SendLogForCustomerCreated1Handler();
+        const eventHandler2 = new SendLogForCustomerCreated2Handler();
         const spyEventHandler1 = jest.spyOn(eventHandler1, "handle");
         const spyEventHandler2 = jest.spyOn(eventHandler2, "handle");
 
@@ -130,7 +130,7 @@ describe("Customer unit tests", () => {
 
         const eventDispatcher = new EventDispatcher();
 
-        const eventHandler = new EnviaConsoleLogHandler();
+        const eventHandler = new CustomerChangedAddressHandler();
         const spyEventHandler1 = jest.spyOn(eventHandler, "handle");
 
         eventDispatcher.register("CustomerChangedAddressEvent", eventHandler);
