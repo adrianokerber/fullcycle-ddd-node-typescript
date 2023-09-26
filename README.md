@@ -13,7 +13,11 @@ As follows:
     - Order => OrderItem[]
     - Product
 
-> Tip: All files with the filename suffix ".spec.ts" are tests
+> Tip: The folder @shared has the common base interfaces/classes
+
+> Tip2: The at (@) in the shared folder is used only to keep the folder on top based on the characters order
+
+> Tip3: All files with the filename suffix ".spec.ts" are tests
 
 ## Setup
 Install Node.js via [NVM](https://github.com/nvm-sh/nvm).
@@ -37,7 +41,7 @@ npm test --coverage
 npx tsc
 ```
 
-> Tip: On Windows system prefer installing Node on WSL2 as in [here](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
+> Tip4: On Windows system prefer installing Node on WSL2 as in [here](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
 
 ## Useful commands used on the project
 Some useful commands for you to use.
