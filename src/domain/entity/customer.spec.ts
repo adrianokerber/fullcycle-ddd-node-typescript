@@ -1,3 +1,8 @@
+import EventDispatcher from "../event/@shared/event-dispatcher";
+import CustomerCreatedEvent from "../event/customer/customer-created.event";
+import EnviaConsoleLogHandler from "../event/customer/handler/envia-console-log.handler";
+import EnviaConsoleLog1Handler from "../event/customer/handler/envia-console-log1.handler";
+import EnviaConsoleLog2Handler from "../event/customer/handler/envia-console-log2.handler";
 import Address from "./address";
 import Customer from "./customer";
 
@@ -94,6 +99,50 @@ describe("Customer unit tests", () => {
 
         customer.addRewardPoints(10);
         expect(customer.rewardPoints).toBe(20);
+
+    });
+
+    it("should notify of creation event", () => {
+
+        const eventDispatcher = new EventDispatcher();
+        
+        const eventHandler1 = new EnviaConsoleLog1Handler();
+        const eventHandler2 = new EnviaConsoleLog2Handler();
+        const spyEventHandler1 = jest.spyOn(eventHandler1, "handle");
+        const spyEventHandler2 = jest.spyOn(eventHandler2, "handle");
+
+        eventDispatcher.register("CustomerCreatedEvent", eventHandler1);
+        eventDispatcher.register("CustomerCreatedEvent", eventHandler2);
+
+        expect(eventDispatcher.getEventHandlers["CustomerCreatedEvent"][0]).toMatchObject(eventHandler1);
+        expect(eventDispatcher.getEventHandlers["CustomerCreatedEvent"][1]).toMatchObject(eventHandler2);
+
+        const customer = new Customer("c1", "Customer 1", eventDispatcher);
+        const address = new Address("Street 1", 123, "12341251", "São Paulo");
+        customer.changeAddress(address); // TODO: should be created with the address or use the setter?
+
+        expect(spyEventHandler1).toHaveBeenCalled();
+        expect(spyEventHandler2).toHaveBeenCalled();
+
+    });
+
+    it("should notify of address changed event", () => {
+
+        const eventDispatcher = new EventDispatcher();
+
+        const eventHandler = new EnviaConsoleLogHandler();
+        const spyEventHandler1 = jest.spyOn(eventHandler, "handle");
+
+        eventDispatcher.register("CustomerChangedAddressEvent", eventHandler);
+
+        expect(eventDispatcher.getEventHandlers["CustomerChangedAddressEvent"][0]).toMatchObject(eventHandler);
+
+        const customer = new Customer("c1", "Customer 1", eventDispatcher);
+        const address = new Address("Street 1", 123, "12341251", "São Paulo");
+
+        customer.changeAddress(address);
+
+        expect(spyEventHandler1).toHaveBeenCalled();
 
     });
 
