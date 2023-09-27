@@ -1,6 +1,8 @@
 # A study about Domain Driven Design (DDD)
 A study of DDD applied on FullCycle course using Node.js with TypeScript. Also using Jest as the test framework.
 
+We implemented examples of Factory Method design pattern, built Domain Services and Domain Events, all mechanisms that can be used to empower our Domain.
+
 > Tip: This Node.js project was created using `npm i typescript --save-dev` command and `npx tsc --init` for a typescript configured project
 
 Our Domain was modeled with these aggregates:
@@ -9,8 +11,11 @@ Our Domain was modeled with these aggregates:
 3. Product Aggregate: The product itself;
 
 As follows:
+    
     - Customer => Address
+
     - Order => OrderItem[]
+
     - Product
 
 > Tip: The folder @shared has the common base interfaces/classes
