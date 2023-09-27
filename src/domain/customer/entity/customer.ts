@@ -2,8 +2,9 @@ import EventDispatcher from "../../@shared/event/event-dispatcher";
 import CustomerChangedAddressEvent from "../event/customer-changed-address.event";
 import CustomerCreatedEvent from "../event/customer-created.event";
 import Address from "../value-object/address";
+import CustomerInterface from "./customer.interface";
 
-export default class Customer {
+export default class Customer implements CustomerInterface {
     
     private _id: string;
     private _name: string;
